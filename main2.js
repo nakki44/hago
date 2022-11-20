@@ -1,7 +1,31 @@
+
+const fs=require('fs');
 const http = require('http');
 
+function frame(list,body){
+  return`
+  <!doctype html>
+  <html>
+  <head>
+  <title>블로그만들깅</title>
+  <meta charset="utf-8">
+  </head>
+  <body>
+  <h1><a href="/">한글됨?</a></h1>
+  ${list}
+  <a href="/create">create</a>
+  ${body}
+  </body>
+  </html>
+  `;
+}
+function jsonmaker(data){
+  fs.writeFileSync("test.txt",data);
+
+}
 http.createServer((request, response) => {
   const { headers, method, url } = request;
+
   let body = [];
   request.on('error', (err) => {
     console.error(err);
@@ -9,24 +33,11 @@ http.createServer((request, response) => {
     body.push(chunk);
   }).on('end', () => {
     body = Buffer.concat(body).toString();
-    // 여기서부터 새로운 부분입니다.
 
-    response.on('error', (err) => {
-      console.error(err);
-    });
-
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'application/json');
-    // 주의: 위 두 줄은 다음 한 줄로 대체할 수도 있습니다.
-    // response.writeHead(200, {'Content-Type': 'application/json'})
-
+    response.writeHead(200)
     const responseBody = { headers, method, url, body };
-
-    response.write(JSON.stringify(responseBody));
-    response.end();
-    // 주의: 위 두 줄은 다음 한 줄로 대체할 수도 있습니다.
-    // response.end(JSON.stringify(responseBody))
-
-    // 새로운 부분이 끝났습니다.
+    var a=jsonmaker(JSON.stringify(responseBody));
+    var b=frame(method,url);
+    response.end(b);
   });
-}).listen(8080);
+}).listen(3000);
