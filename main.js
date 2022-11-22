@@ -11,21 +11,23 @@ function frame(list,body){
     <script src="list.js"></script>
   </head>
   <body>
-  <img src="gman.jpg" alt="">
+  <img src="https://golden-goblin.com/content-thief/wp-content/uploads/sites/5/kboard_attached/1/202202/620753a128adc8741897.png" alt="">
   <h1>매일매일</h1>
       <div id="grid">
   <button type="button" name="button" onclick="listmaker()"></button><br>
-        <ul id='_date'>
-  
+        <div id="list">
+        </div>
+        <ul>
+          <li>1</li>
         </ul>
   
         <div id="article">
     <button type="button" name="button" onclick="datamaker()"></button><br>
     <p>블로그 만들어본다.<br>
     img 속성 onclick="window.open(this.src)" 클릭시 원본 이미지 새창에 띄워서 보여준다.</p>
-    <br>첫 블로그 페이지<br>
+    >첫 블로그 페이지
     <img src="start.jpg" height="100" width="100px"alt="" onclick="window.open(this.src)">
-    <img src="gundea.png" alt="" >
+    <img src="https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/227/f2413f7d1cb6b50c98e551309777f6fa_res.jpeg" alt="" >
     <br>해결할것<br>
     디자인<br>
     서버 sql 목록 누적 데이터 상호 교환 제일급함
@@ -39,6 +41,7 @@ function frame(list,body){
     기본틀 메일 깃허브 주소 <br>
     정할거없으면 코테라도 하나 풀고 <br>
     에누리마켓 따라하기<br>
+    </div>
   </body>
   </html>
   `;
