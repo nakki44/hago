@@ -21,6 +21,7 @@ function frame(list,body){
           <li>1</li>
         </ul>
   
+        
         <div id="article">
     <button type="button" name="button" onclick="datamaker()"></button><br>
     <p>블로그 만들어본다.<br>
@@ -51,10 +52,6 @@ function frame(list,body){
    <a href="/create">create</a>
    ${body} */}
 
-function jsonmaker(data){
-  fs.writeFileSync("test.txt",data);
-
-}
 http.createServer((request, response) => {
   const { headers, method, url } = request;
 
@@ -68,7 +65,7 @@ http.createServer((request, response) => {
 
     response.writeHead(200)
     const responseBody = { headers, method, url, body };
-    var a=jsonmaker(JSON.stringify(responseBody));
+    
     var b=frame(method,url);
     response.end(b);
   });
