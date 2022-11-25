@@ -5,14 +5,17 @@
     <title>블로그만들기</title>
     <link rel="stylesheet" href="style.css">
     <!-- <script src="list.js"></script> -->
-    <script src="ex.js"></script>
-    <script>function square(a){a=a+a;console.log(a);}</script>
+    <!-- <script src="ex.js"></script> -->
+    <!-- <script src="urlex.js"></script> -->
+    <script>
+    function a(){console.log(window.location.search);}
+    </script>
   </head>
     <body>
     
 <h1>매일매일</h1>
     <div id="grid">
-<button type="button" name="button" onclick="aa()"></button><br>
+
       <ul id='_date'>
 
       </ul>
@@ -22,9 +25,11 @@
   img 속성 onclick="window.open(this.src)" 클릭시 원본 이미지 새창에 띄워서 보여준다.</p>
   <br>첫 블로그 페이지<br>
   
-  <form action="javascript:myFunction()" method="post">
-    <input type="text" id="textInput" placeholder="Input here...">
-    <input type="submit" value="CLICK ME" onclick="square(document.getElementById('textInput').value)">
+  
+  <form onsubmit="a()" method="post" >
+    <input type="text" id="id" placeholder="Input here..." name="title">
+    <input type="text" id="password" placeholder="Input here..."name="discription"> 
+    <input type="submit" value="CLICK ME" >
   </form>
   
     <br>해결할것<br>

@@ -8,6 +8,7 @@ function getHtml (_url) {
       console.error(error);
     }
   };
+  
   //기본 특성
   getHtml(_url)
   .then((html) => {
